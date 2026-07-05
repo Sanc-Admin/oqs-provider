@@ -27,3 +27,8 @@ scripts/__pycache__
 # MacOS
 .DS_Store
 
+build/
+*.o
+*.so
+test-mldsa.key
+test-mlkem.key
