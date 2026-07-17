@@ -5,7 +5,7 @@ on: [pull_request, push, workflow_call]
 jobs:
   workflowcheck:
     name: Check validity of GitHub workflows
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, linux, ARM64]
     container: openquantumsafe/ci-ubuntu-latest:latest
     steps:
       - name: Checkout code
