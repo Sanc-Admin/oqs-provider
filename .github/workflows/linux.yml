@@ -10,7 +10,7 @@ jobs:
   coding_style_tests:
     uses: ./.github/workflows/coding_style.yml
   linux_baseline:
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, linux, ARM64]
     needs: [coding_style_tests]
     strategy:
       fail-fast: false
@@ -31,7 +31,7 @@ jobs:
         run: ./scripts/runtests.sh -V
 
   linux_intel:
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, linux, ARM64]
     needs: [coding_style_tests]
     strategy:
       fail-fast: false
@@ -91,7 +91,7 @@ jobs:
 
   asan_linux_intel:
     name: "Security checks"
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, linux, ARM64]
     needs: [coding_style_tests]
     strategy:
       fail-fast: false
@@ -166,7 +166,7 @@ jobs:
 
   linux_aarch64:
     name: "aarch64 cross-compilation"
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, linux, ARM64]
     needs: [coding_style_tests]
     strategy:
       fail-fast: false
