@@ -4,7 +4,7 @@ on: [workflow_call]
 jobs:
   check_clang_format:
     name: "Coding style"
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, linux, ARM64]
     strategy:
       fail-fast: false
     container:
