@@ -31,7 +31,7 @@ jobs:
 
   standalone_linux_intel:
     needs: [coding_style_tests]
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, linux, ARM64]
     strategy:
       fail-fast: false
       matrix:
